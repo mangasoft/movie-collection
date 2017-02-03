@@ -15,10 +15,13 @@ class About extends Component {
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+          <h2>About</h2>
         </div>
         <p className="App-intro">
-          To get started, edit <code>src/components/About/AboutContainer.js</code> and save to reload.
+          This app is written in react.js. It utilizes one way data flow with redux
+          and manages a client side persistence layer using `redux persists`. Under the
+          hood it really just uses localStorage to save the state of the store every time
+          it gets updated by the reducers. Bootstrap is the client side UI library.
         </p>
       </div>
     );

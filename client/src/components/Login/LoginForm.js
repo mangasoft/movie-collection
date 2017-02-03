@@ -3,13 +3,15 @@ import React, { PropTypes } from 'react';
 const LoginForm = ({state, updateField, submitForm}) => {
   return (
     <form onSubmit={submitForm}>
-      <label htmlFor="email" />
-      <input type="email" name="email" value={state.email} onChange={updateField} placeholder="Email" required />
-
-      <label htmlFor="password" />
-      <input type="password" name="password" value={state.password} onChange={updateField} placeholder="Password" required />
-
-      <button type="submit">Submit</button>
+      <div className="form-group">
+        <label htmlFor="email">Email</label>
+        <input type="email" name="email" className="form-control" value={state.email} onChange={updateField} placeholder="Email" required />
+      </div>
+      <div className="form-group">
+        <label htmlFor="password">Password</label>
+        <input type="password" name="password" className="form-control" value={state.password} onChange={updateField} placeholder="Password" required />
+      </div>
+      <button type="submit" className="btn btn-primary">Submit</button>
     </form>
   );
 };

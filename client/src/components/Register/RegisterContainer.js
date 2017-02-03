@@ -39,10 +39,10 @@ class Register extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Register</h2>
         </div>
-        <p className="App-intro">
-          Already have an account? <Link to="login">Login here</Link>
-        </p>
-        <RegisterForm updateField={this.updateField} submitForm={this.submitForm} state={this.state} />
+        <div className="container">
+          <RegisterForm updateField={this.updateField} submitForm={this.submitForm} state={this.state} />
+          <p className="App-intro"> Already have an account? <Link to="login">Login here</Link> </p>
+        </div>
       </div>
     );
   }

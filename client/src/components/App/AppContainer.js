@@ -12,7 +12,7 @@ import * as actions from '../../actions';
  class App extends Component {
    render() {
      const { logoutUser } = this.props.actions;
-     const { loggedIn, user } = this.props.auth;
+     const { loggedIn } = this.props.auth;
      return (
        <div className="App">
         <nav className="navbar navbar-inverse navbar-fixed-top">

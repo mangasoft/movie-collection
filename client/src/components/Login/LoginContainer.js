@@ -39,10 +39,10 @@ class Login extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Login</h2>
         </div>
-        <p className="App-intro">
-          Don't have an account? <Link to="register">Register here</Link>
-        </p>
-        <LoginForm updateField={this.updateField} submitForm={this.submitForm} state={this.state} />
+        <div className="container">
+          <LoginForm updateField={this.updateField} submitForm={this.submitForm} state={this.state} />
+          <p className="App-intro"> Don't have an account? <Link to="register">Register here</Link> </p>
+        </div>
       </div>
     );
   }
