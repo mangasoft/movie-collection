@@ -11,7 +11,7 @@ import Register from './components/Register/RegisterContainer';
 import About from './components/About/AboutContainer';
 import AllMovies from './components/AllMovies/AllMoviesContainer';
 import NewMovie from './components/Movie/NewMovieContainer';
-// import EditMovie from './components/Movie/EditMovieContainer';
+import EditMovie from './components/Movie/EditMovieContainer';
 
 const store = configureStore({}, undefined, autoRehydrate());
 persistStore(store, {}, () => {
@@ -43,7 +43,7 @@ persistStore(store, {}, () => {
           <Route path="about" component={About} onEnter={requireAuth} />
           <Route path="movies" component={AllMovies} onEnter={requireAuth} />
           <Route path="movies/new" component={NewMovie} onEnter={requireAuth} />
-          {/*<Route path="movies/edit" component={EditMovie} onEnter={requireAuth} />*/}
+          <Route path="movies/:movie_id/edit" component={EditMovie} onEnter={requireAuth} />
         </Route>
       </Router>
     </Provider>,

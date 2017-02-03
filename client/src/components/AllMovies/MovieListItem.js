@@ -16,10 +16,10 @@ const MovieListItem = ({movie, user, deleteMovie}) => {
             <p><b>Rating:</b> {movie.rating}</p>
             <p><b>Actors:</b> {movie.actors.join(", ")}</p>
             <p>
-              {user === movie.uploadedByUser && <Link to="updateMovie/{movie._id}" className="btn btn-default">
+              {user._id === movie.uploadedByUser && <Link to={`movies/${movie._id}/edit`} className="btn btn-default">
                 Update
               </Link>}
-              {user === movie.uploadedByUser && <button className="btn btn-danger" onClick={deleteMovieWrapper}>
+              {user._id === movie.uploadedByUser && <button className="btn btn-danger" onClick={deleteMovieWrapper}>
                 Delete
               </button>}
             </p>

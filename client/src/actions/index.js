@@ -95,6 +95,7 @@ export function updateMovie(movie, user) {
 
 export function deleteMovie(movie, user) {
   // Wrapper for thunk.
+  console.log(user);
   return function(dispatch) {
     const config = {  headers: { 'Authorization': user.token } };
     axios.delete(`${ROOT_URL}/movie/${movie._id}`, movie, config)

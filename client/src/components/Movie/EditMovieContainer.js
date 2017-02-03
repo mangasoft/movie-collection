@@ -14,8 +14,7 @@ import * as actions from '../../actions';
 class EditMovie extends Component {
   constructor(props) {
     super(props);
-    this.state = Object.assign({}, );
-
+    this.state = Object.assign({}, props.movie, {actors: props.movie.actors.join(",")});
     this.updateField = this.updateField.bind(this);
     this.submitForm = this.submitForm.bind(this);
   }
@@ -27,7 +26,7 @@ class EditMovie extends Component {
   }
   submitForm(event) {
     event.preventDefault();
-    this.props.actions.newMovie(this.state, this.props.user);
+    this.props.actions.updateMovie(this.state, this.props.user);
   }
   render() {
     return (
