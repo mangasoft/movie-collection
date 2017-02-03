@@ -62,10 +62,14 @@ class AllMovies extends Component {
           <h2>All Movies</h2>
         </div>
         <div className="App-intro">
-          <p></p>
-          <label htmlFor="search">Search</label>
-          <input type="text" name="search" placeholder="Search" value={this.state.searchFilter} onChange={this.updateSearch} />
-          <MovieList movies={this.filterMovies()} userId={this.props.auth.user._id} />
+          <div className="container">
+            <div className="form-group">
+              <label htmlFor="search">Search</label>
+              <input type="text" name="search" className="form-control" placeholder="Search" value={this.state.searchFilter} onChange={this.updateSearch} />
+            </div>
+            <hr />
+            <MovieList movies={this.filterMovies()} user={this.props.auth.user} deleteMovie={this.props.actions.deleteMovie} />
+          </div>
         </div>
       </div>
     );

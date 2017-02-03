@@ -1,28 +1,39 @@
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 import '../../assets/css/Movie.css';
-const MovieListItem = ({movie, userId}) => {
+const MovieListItem = ({movie, user, deleteMovie}) => {
+  const deleteMovieWrapper = () => {
+    deleteMovie(movie, user);
+  };
   return (
-    <div>
-      <img className="Movie-poster-thumb" src={movie.posterImage} alt={movie.title} />
-      <p>Title: {movie.title}</p>
-      <p>Genre: {movie.genre}</p>
-      <p>Year: {movie.year}</p>
-      <p>Rating: {movie.rating}</p>
-      <p>Actors: {movie.actors.join(", ")}</p>
-      {userId === movie.uploadedByUser && <Link to="updateMovie" className="btn btn-default">
-        Update
-      </Link>}
-      {userId === movie.uploadedByUser && <button className="btn btn-danger">
-        Delete
-      </button>}
+    <div className="row">
+      <div className="col-sm-6 col-md-4">
+        <div className="thumbnail">
+          <img className="Movie-poster-thumb" src={movie.posterImage} alt={movie.title} />
+          <div className="caption">
+            <h3>{movie.title} <small>{movie.year}</small></h3>
+            <p><b>Genre:</b> {movie.genre}</p>
+            <p><b>Rating:</b> {movie.rating}</p>
+            <p><b>Actors:</b> {movie.actors.join(", ")}</p>
+            <p>
+              {user === movie.uploadedByUser && <Link to="updateMovie/{movie._id}" className="btn btn-default">
+                Update
+              </Link>}
+              {user === movie.uploadedByUser && <button className="btn btn-danger" onClick={deleteMovieWrapper}>
+                Delete
+              </button>}
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
 
 MovieListItem.propTypes = {
   movie: PropTypes.object.isRequired,
-  userId: PropTypes.string.isRequired
+  user: PropTypes.object.isRequired,
+  deleteMovie: PropTypes.func.isRequired
 };
 
 export default MovieListItem;
