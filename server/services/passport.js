@@ -25,20 +25,16 @@ const localLogin = new LocalStrategy(localOptions, function(email, password, don
 
 // Setup options for JWT Strategy
 const jwtOptions = {
-  jwtFromRequest: ExtractJwt.fromHeader('Authorization'),
+  jwtFromRequest: ExtractJwt.fromHeader('authorization'),
   secretOrKey: secret
 };
 
 // Create JWT strategy
 const jwtLogin = new JwtStrategy(jwtOptions, function(payload, done) {
   User.findById(payload.id, function(err, user) {
-    if (err) { return done(err, false); }
-
-    if (user) {
-      done(null, user);
-    } else {
-      done(null, false);
-    }
+    if (err) return done(err, false);
+    if (user) return done(null, user);
+    else return done(null, false);
   });
 });
 
