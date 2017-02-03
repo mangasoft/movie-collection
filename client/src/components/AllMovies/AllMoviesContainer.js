@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
+import { Link } from 'react-router';
 import { connect } from 'react-redux';
 
 import MovieList from './MovieList';
@@ -60,6 +61,7 @@ class AllMovies extends Component {
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h2>All Movies</h2>
+          <Link to="movies/new">New Movie</Link>
         </div>
         <div className="App-intro">
           <div className="container">

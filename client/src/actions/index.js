@@ -71,6 +71,8 @@ export function newMovie(movie, user) {
     const config = {  headers: { 'Authorization': user.token } };
     axios.post(`${ROOT_URL}/movie`, movie, config)
       .then((response) => {
+        browserHistory.push('/movies');
+        alert("Successfully created new movie");
         dispatch({type: NEW_MOVIE, payload: response.data.movie});
       })
       .catch((err) => console.error());
@@ -83,6 +85,8 @@ export function updateMovie(movie, user) {
     const config = {  headers: { 'Authorization': user.token } };
     axios.post(`${ROOT_URL}/movie/${movie._id}`, movie, config)
       .then((response) => {
+        browserHistory.push('/movies');
+        alert("Successfully updated new movie");
         dispatch({type: UPDATE_MOVIE, payload: response.data.movie});
       })
       .catch((err) => console.error());
