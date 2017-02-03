@@ -28,7 +28,11 @@ export default (state = INITIAL_STATE, action) => {
     case UPDATE_MOVIE:
       return { ...state, updatedMovie: action.payload };
     case DELETE_MOVIE:
-      return { ...state, deletedMovie: action.payload };
+      const deletedMovie = action.payload;
+      let newMovies = ...state.movies;
+      const idx = newMovies.findIndex(m => return m._id === deletedMovie._id);
+      newMovies.splice(idx, 1);
+      return { ...state, deletedMovie, movies: newMovies };
     default:
       return state;
   }
