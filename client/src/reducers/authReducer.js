@@ -17,9 +17,9 @@ export default (state = INITIAL_STATE, action) => {
       if (incoming) return { ...state, ...incoming };
       return state;
     case REGISTER_USER:
-      return { ...state, user: action.payload };
+      return { ...state, user: action.payload, loggedIn: true };
     case LOGIN_USER:
-      return { ...state, user: action.payload };
+      return { ...state, user: action.payload, loggedIn: true };
     case LOGOUT_USER:
       return { ...state, ...INITIAL_STATE };
     default:

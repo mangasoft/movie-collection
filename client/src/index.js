@@ -1,24 +1,46 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import { browserHistory, Router, Route } from 'react-router';
-import { connect, Provider } from 'react-redux';
+import { Provider } from 'react-redux';
 import {persistStore, autoRehydrate} from 'redux-persist'
-import { bindActionCreators } from 'redux';
+import configureStore from './store/configureStore'
 
 import App from './components/App/AppContainer';
+import Login from './components/Login/LoginContainer';
+import Register from './components/Register/RegisterContainer';
 import About from './components/About/AboutContainer';
-import configureStore from './store/configureStore'
+// import Movies from './components/Movies/MoviesContainer';
 
 const store = configureStore({}, undefined, autoRehydrate());
 persistStore(store);
+
+function checkAuth(nextState, replace) {
+  const token = localStorage.getItem('token');
+  if (token) {
+    replace({
+      pathname: '/about',
+      state: { nextPathname: nextState.location.pathname }
+    })
+  }
+}
+function requireAuth(nextState, replace) {
+  const token = localStorage.getItem('token');
+  if (!token) {
+    replace({
+      pathname: '/login',
+      state: { nextPathname: nextState.location.pathname }
+    })
+  }
+}
 
 ReactDOM.render(
   <Provider store={store}>
     <Router history={browserHistory}>
       <Route path="/" component={App}>
-        <Route path="login" component={About} />
-        <Route path="register" component={About} />
-        <Route path="about" component={About} />
+        <Route path="login" component={Login} onEnter={checkAuth} />
+        <Route path="register" component={Register} onEnter={checkAuth} />
+        <Route path="about" component={About} onEnter={requireAuth} />
+        {/*<Route path="movies" component={Movies} onEnter={requireAuth} />*/}
       </Route>
     </Router>
   </Provider>,

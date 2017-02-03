@@ -10,9 +10,18 @@ import * as actions from '../../actions';
  **/
  class App extends Component {
    render() {
+     const { logoutUser } = this.props.actions;
+     const { loggedIn, user } = this.props.auth;
      return (
        <div className="App">
-         <p>Hello</p>
+
+         {loggedIn && <div>
+           <p>Hello, {user.email}</p>
+           <button onClick={logoutUser}>Log out</button>
+         </div>}
+
+         {!loggedIn && <p>Please sign in to continue</p>}
+
          {this.props.children}
        </div>
      );
