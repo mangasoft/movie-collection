@@ -1,7 +1,14 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+
 import logo from '../../assets/images/logo.svg';
 import '../../assets/css/App.css';
+import * as actions from '../../actions';
 
+/**
+ *  This is the high level entry point of the application.
+ **/
 class About extends Component {
   render() {
     return (
@@ -18,4 +25,18 @@ class About extends Component {
   }
 }
 
-export default About;
+const mapStateToProps = (state) => {
+  return state;
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    actions: bindActionCreators(actions, dispatch)
+  };
+};
+
+About.propTypes = {
+  actions: PropTypes.object.isRequired
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(About);
