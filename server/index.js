@@ -12,7 +12,7 @@ const router = require('./router');
 const mongoose = require('mongoose');
 
 // DB Setup
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017', (err) => {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017', { useMongoClient: true}, (err) => {
   if (err) console.log('error connecting to db', err);
   else console.log('Successfully connected to db');
 });
