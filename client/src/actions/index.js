@@ -24,7 +24,7 @@ export function loginUser(user) {
         browserHistory.push('/about');
         dispatch({type: LOGIN_USER, payload: response.data.user});
       })
-      .catch((err) => console.error());
+      .catch(console.error);
   };
 }
 
@@ -38,7 +38,7 @@ export function registerUser(user) {
         browserHistory.push('/about');
         dispatch({type: REGISTER_USER, payload: response.data.user});
       })
-      .catch((err) => console.error());
+      .catch(console.error);
   };
 }
 
@@ -61,7 +61,7 @@ export function getMovies() {
       .then((response) => {
         dispatch({type: GET_MOVIES, payload: response.data.movies});
       })
-      .catch((err) => console.error());
+      .catch(console.error);
   };
 }
 
@@ -75,7 +75,7 @@ export function newMovie(movie, user) {
         alert("Successfully created new movie");
         dispatch({type: NEW_MOVIE, payload: response.data.movie});
       })
-      .catch((err) => console.error());
+      .catch(console.error);
   };
 }
 
@@ -89,7 +89,7 @@ export function updateMovie(movie, user) {
         alert("Successfully updated new movie");
         dispatch({type: UPDATE_MOVIE, payload: response.data.movie});
       })
-      .catch((err) => console.error());
+      .catch(console.error);
   };
 }
 
@@ -102,6 +102,6 @@ export function deleteMovie(movie, user) {
       .then((response) => {
         dispatch({type: DELETE_MOVIE, payload: response.data.movie});
       })
-      .catch((err) => console.error());
+      .catch(console.error);
   };
 }
