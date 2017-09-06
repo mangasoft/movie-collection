@@ -1,5 +1,6 @@
 # Movie Collection
-This is the root directory of both a front end and backend app.
+This is the root directory of both a front end and backend app. This project relies on [yarn](https://yarnpkg.com/lang/en/docs/install/) and [mongodb](https://treehouse.github.io/installation-guides/mac/mongo-mac.html) which can both be installed with [homebrew](https://brew.sh/). 
+
 
 ### Backend
 To get the backend started, navigate to the `server` directory and run:
@@ -25,7 +26,7 @@ Inside the `server` directory, you can run several commands:
   ```
   Starts the mocha test runner.
 
-  The tests are not guaranteed to run successfully every time. It is intentionally left this way for a test interview. 
+  The tests are not guaranteed to run successfully every time. It is intentionally left this way for a test interview.
 
 ### Frontend
 Inside the `client` directory, you can run several commands:
