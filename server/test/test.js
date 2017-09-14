@@ -1,3 +1,14 @@
+/**
+ * These tests pass on the first time but do not pass thereafter. This is intentionally built this way and is expected
+ * to be altered by you! When you are finished making your changes, the expectation set forth is that the following
+ * will be production quality tests which will benefit a professional environment. 
+ *
+ * Also, make any/all changes you see fit based on your experience. Every detail you (do not) change will be subject to
+ * questioning during the in person interview.
+ *
+ * Good luck.
+ */
+
 process.env.NODE_ENV = 'test';
 
 const assert = require('assert');
@@ -96,7 +107,6 @@ describe('Movie Tests', function() {
     });
   });
 
-  // this is expected to work the first time. Fail everytime thereafter
   describe('Read', function() {
     it('Should send back a list of all movies', function(done) {
       chai.request(server).get('/movies').end(function (err, res) {
@@ -110,7 +120,6 @@ describe('Movie Tests', function() {
     });
   });
 
-  // The following left blank on purpose. They must be implemented.
   describe('Update', function() {
     it('Should update a movie', function() {
 
