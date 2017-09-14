@@ -1,9 +1,5 @@
 /**
- * These tests pass on the first time but do not pass thereafter. This is intentionally built this way and is expected
- * to be altered by you! When you are finished making your changes, the expectation set forth is that the following
- * will be production quality tests which will benefit a professional environment. 
- *
- * Also, make any/all changes you see fit based on your experience. Every detail you (do not) change will be subject to
+ * Make any/all changes you see fit based on your experience. Every detail you (do not) change will be subject to
  * questioning during the in person interview.
  *
  * Good luck.
