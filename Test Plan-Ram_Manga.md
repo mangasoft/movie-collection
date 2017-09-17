@@ -1,4 +1,4 @@
-Test Plan - Movie Collection Web App
+##Test Plan - Movie Collection Web App
 
 	Home movie collection is a web app that helps a user to store and search movies in their home collecetion. 
 
