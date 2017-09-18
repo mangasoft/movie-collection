@@ -5,7 +5,7 @@
 - Test Strategy: 
 	Testing the home movie application should include:
 	- Function Testing of requirements that can be traced directly to given use cases.
-		- Verify the app renders correctly in Chrome browser on OSx, Windows X, iOS, and Android.
+		- Verify the app renders correctly in Chrome browser on OSx, Windows X, iOS, and Android (can be automated using Selenium Webdriver.)
 		- Verify a registered user is able to enter new movies into the collection.
 		- Verify user is able to search existing movies by an arbitrary field. 
 		- Verify user is able to see a list of all movies in user's collection.
