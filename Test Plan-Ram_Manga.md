@@ -1,6 +1,6 @@
 ## Test Plan - Movie Collection Web App
 
-	Home movie collection is a web app that helps a user to store and search movies in their home collecetion. 
+	Home movie collection is a web app that helps a user store and search movies in their home collecetion. 
 
 - Test Strategy: 
 	Testing the home movie application should include:
